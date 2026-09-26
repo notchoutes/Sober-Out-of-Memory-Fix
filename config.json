@@ -1,0 +1,33 @@
+// !!! STOP !!!
+// This file is not meant to be edited by hand unless you know what you're doing. You are encouraged to use the settings menu instead (Right click Sober in your apps menu, then hit "Settings")
+// You can prevent Sober from launching by improperly formatting this file's JSON, or possibly mess up the Roblox engine by toggling certain flags intended for Roblox engineers.
+// Incase you mess up, you can reset this file by deleting it. It will be recreated the next time you launch Sober.
+// -------------------------------------------
+// Documentation is available at https://vinegarhq.org/Sober/Configuration/index.html - We encourage you to read it before toggling anything.
+{
+    "allow_gamepad_permission": false,
+    "close_on_leave": false,
+    "discord_rpc_enabled": true,
+    "discord_rpc_show_join_button": true,
+    "enable_gamemode": true,
+    "enable_hidpi": false,
+    "enable_mobile_home_screen": false,
+    "fflags": {
+        "DFFlagTextureQualityOverrideEnabled": true,
+        "DFIntTextureQualityOverride": 2,
+        "DFIntCSGLevelOfDetailSwitchingDistance": 150,
+        "DFIntCSGLevelOfDetailSwitchingDistanceL12": 100,
+        "DFIntCSGLevelOfDetailSwitchingDistanceL23": 150,
+        "DFIntCSGLevelOfDetailSwitchingDistanceL34": 200,
+        "DFFlagDebugPauseVoxelizer": true,
+        "FIntFRMMinGrassDistance": 0,
+        "FIntFRMMaxGrassDistance": 150,
+        "FIntGrassMovementReducedMotionFactor": true
+    },
+    "graphics_optimization_mode": "balanced",
+    "server_location_indicator_enabled": false,
+    "touch_mode": "off",
+    "use_console_experience": false,
+    "use_libsecret": false,
+    "use_opengl": true
+}
