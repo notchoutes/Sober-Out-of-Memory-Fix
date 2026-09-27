@@ -35,10 +35,12 @@ The configuration is distributed together with an automated installer, allowing 
 
 The easiest way to install the configuration is through the official installer.
 
+### Recommended Installer
+
 Run:
 
 ```bash
-curl -fsSL https://install.choutes.top/sober.sh | bash
+curl -fsSL https://install.choutes.top/install.sh | bash
 ```
 
 The installer will:
@@ -51,6 +53,20 @@ The installer will:
 6. Verify the installation
 
 After installation, launch Sober normally.
+
+### Installer Fallback
+
+If `install.choutes.top/install.sh` does not work, the installer is also available directly from the GitHub repository.
+
+**[View `sober.sh` on GitHub](https://github.com/notchoutes/Sober-Out-of-Memory-Fix/blob/main/sober.sh)**
+
+You can download and run the installer directly from GitHub:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/notchoutes/Sober-Out-of-Memory-Fix/main/sober.sh | bash
+```
+
+This uses the same `sober.sh` installer from the project's `main` branch.
 
 ### Requirements
 
@@ -112,7 +128,7 @@ This indicates that the configuration was able to improve stability on the teste
 
 > **Important:** This is a real-world test result from one specific system. It does not guarantee that the configuration will eliminate crashes on every computer, GPU, or Roblox experience.
 
-Sober's documentation also covers configuration and troubleshooting for memory-related issues.
+Sober's official documentation also covers configuration and troubleshooting for memory-related issues.
 
 ---
 
@@ -148,8 +164,6 @@ Sober maintains an allowlist for supported Fast Flags, so unsupported flags may 
 ~/.var/app/org.vinegarhq.Sober/config/sober/config.json
 ```
 
-This is the standard Sober configuration location documented by VinegarHQ.
-
 ---
 
 ## Why This Configuration Exists
@@ -169,7 +183,7 @@ The goal is to provide a more balanced configuration that can reduce memory pres
 The installer downloads the configuration directly from this repository:
 
 ```text
-https://raw.githubusercontent.com/notchoutes/sober-out-of-memory/main/config.json
+https://raw.githubusercontent.com/notchoutes/Sober-Out-of-Memory-Fix/main/config.json
 ```
 
 The downloaded file replaces:
@@ -180,7 +194,12 @@ The downloaded file replaces:
 
 The installer uses a temporary file during the download and only replaces the existing configuration after the download succeeds.
 
-The installer does **not** require root access or install additional system packages.
+The installer:
+
+* Does not require root access
+* Does not install additional system packages
+* Only modifies Sober's user configuration
+* Downloads the configuration over HTTPS
 
 ---
 
@@ -194,7 +213,7 @@ rm -f ~/.var/app/org.vinegarhq.Sober/config/sober/config.json
 
 Then launch Sober again.
 
-Sober will regenerate the configuration with its default values. This reset behavior is documented by VinegarHQ.
+Sober will recreate the configuration with its default values.
 
 ---
 
@@ -225,10 +244,16 @@ Sober should regenerate its configuration automatically.
 
 ### Reinstall the Custom Configuration
 
-Run the installer again:
+Run the official installer again:
 
 ```bash
-curl -fsSL https://install.choutes.top/sober.sh | bash
+curl -fsSL https://install.choutes.top/install.sh | bash
+```
+
+If the official installer is unavailable, use the GitHub fallback:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/notchoutes/Sober-Out-of-Memory-Fix/main/sober.sh | bash
 ```
 
 ---
@@ -236,7 +261,7 @@ curl -fsSL https://install.choutes.top/sober.sh | bash
 ## Repository
 
 ```text
-sober-out-of-memory/
+Sober-Out-of-Memory-Fix/
 ├── config.json
 ├── sober.sh
 ├── README.md
@@ -316,8 +341,9 @@ See [`LICENSE`](LICENSE) for the complete license text.
 
 * **Sober:** https://sober.vinegarhq.org/
 * **VinegarHQ:** https://vinegarhq.org/
-* **Project Repository:** https://github.com/notchoutes/sober-out-of-memory
-* **Installer:** https://install.choutes.top/sober.sh
+* **Project Repository:** https://github.com/notchoutes/Sober-Out-of-Memory-Fix
+* **Installer:** https://install.choutes.top/install.sh
+* **GitHub Installer:** https://github.com/notchoutes/Sober-Out-of-Memory-Fix/blob/main/sober.sh
 * **Choutes Studios:** https://choutes.top
 
 ---
@@ -332,6 +358,6 @@ A community configuration for Sober on Linux.
 
 <br>
 
-[GitHub](https://github.com/notchoutes/sober-out-of-memory) · [Website](https://choutes.top)
+[GitHub](https://github.com/notchoutes/Sober-Out-of-Memory-Fix) · [Website](https://choutes.top)
 
 </div>
