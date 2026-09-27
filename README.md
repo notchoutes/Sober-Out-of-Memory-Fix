@@ -13,7 +13,7 @@
 
 <br>
 
-[Installation](#installation) · [Features](#features) · [Tested Hardware](#tested-hardware) · [Configuration](#configuration) · [Troubleshooting](#troubleshooting)
+[Installation](#installation) · [Features](#features) · [Tested Hardware](#tested-hardware) · [Configuration](#configuration) · [Troubleshooting](#troubleshooting) · [Repository](#repository)
 
 </div>
 
@@ -27,11 +27,11 @@ The project provides a preconfigured `config.json` focused on reducing graphics-
 
 The configuration is distributed together with an automated installer, allowing the configuration to be installed without manually editing Sober's configuration file.
 
-> This project is **not affiliated with, endorsed by, or maintained by VinegarHQ or Roblox**.
+> **This project is not affiliated with, endorsed by, or maintained by VinegarHQ or Roblox.**
 
 ---
 
-## 🚀 Installation
+## Installation
 
 The easiest way to install the configuration is through the official installer.
 
@@ -63,42 +63,7 @@ After installation, launch Sober normally.
 
 ---
 
-## 🧪 Tested Hardware
-
-The configuration has been tested on a low-end system with integrated graphics:
-
-| Component     | Test System                   |
-| ------------- | ----------------------------- |
-| CPU           | Intel Core i5, 4th Generation |
-| RAM           | 8 GB DDR3                     |
-| Dedicated GPU | None                          |
-| Graphics      | Intel integrated graphics     |
-
-### Before
-
-With Sober's **default configuration**, Roblox frequently crashed on this system.
-
-Observed behavior during testing:
-
-* Crash after approximately **5 minutes** of gameplay
-* In some sessions, crash after approximately **1 minute**
-* Repeated instability during gameplay
-
-### After
-
-After installing the **Sober Out of Memory Fix** configuration, the same system was tested again.
-
-**Result: no crashes were encountered during the testing session.**
-
-The configuration successfully resolved the crash problem on the tested Intel 4th-generation i5 system with 8 GB DDR3 RAM and integrated graphics.
-
-> **Important:** This is a real-world test result from one specific system. It does not guarantee that the configuration will eliminate crashes on every computer, GPU, or Roblox experience.
-
-Sober's official troubleshooting documentation also discusses `OutOfMemory` issues involving Intel Haswell and earlier integrated GPUs, making this hardware test particularly relevant.
-
----
-
-## ✨ Features
+## Features
 
 * Memory-focused Sober configuration
 * Reduced graphics memory pressure
@@ -116,7 +81,42 @@ Sober's official troubleshooting documentation also discusses `OutOfMemory` issu
 
 ---
 
-## ⚙️ Configuration
+## Tested Hardware
+
+The configuration has been tested on a low-end system using integrated Intel graphics.
+
+| Component     | Test System                   |
+| ------------- | ----------------------------- |
+| CPU           | Intel Core i5, 4th Generation |
+| RAM           | 8 GB DDR3                     |
+| Dedicated GPU | None                          |
+| Graphics      | Intel integrated graphics     |
+
+### Before Installation
+
+With Sober's **default configuration**, Roblox frequently crashed on this system.
+
+Observed behavior during testing:
+
+* Crash after approximately **5 minutes** of gameplay
+* In some sessions, crash after approximately **1 minute**
+* Repeated instability during gameplay
+
+### After Installation
+
+After installing the **Sober Out of Memory Fix** configuration, the same system was tested again.
+
+**No crashes were encountered during the testing session.**
+
+This indicates that the configuration was able to improve stability on the tested system.
+
+> **Important:** This is a real-world test result from one specific system. It does not guarantee that the configuration will eliminate crashes on every computer, GPU, or Roblox experience.
+
+Sober's documentation also covers configuration and troubleshooting for memory-related issues.
+
+---
+
+## Configuration
 
 Sober stores its configuration at:
 
@@ -140,11 +140,19 @@ This project provides a custom configuration designed around memory usage and gr
 
 The configuration also includes selected Fast Flags intended to control graphics-related behavior.
 
-Sober uses an allowlist for Fast Flags, meaning unsupported flags may be ignored rather than applied.
+Sober maintains an allowlist for supported Fast Flags, so unsupported flags may not be applied.
+
+### Configuration Location
+
+```text
+~/.var/app/org.vinegarhq.Sober/config/sober/config.json
+```
+
+This is the standard Sober configuration location documented by VinegarHQ.
 
 ---
 
-## 🧠 Why This Configuration Exists
+## Why This Configuration Exists
 
 Roblox experiences can place significant pressure on system memory and graphics memory.
 
@@ -156,7 +164,7 @@ The goal is to provide a more balanced configuration that can reduce memory pres
 
 ---
 
-## 📦 What Gets Installed
+## What Gets Installed
 
 The installer downloads the configuration directly from this repository:
 
@@ -172,9 +180,11 @@ The downloaded file replaces:
 
 The installer uses a temporary file during the download and only replaces the existing configuration after the download succeeds.
 
+The installer does **not** require root access or install additional system packages.
+
 ---
 
-## 🔄 Reset to Default
+## Reset to Default
 
 If you want to return to Sober's default configuration, remove the configuration file:
 
@@ -182,15 +192,15 @@ If you want to return to Sober's default configuration, remove the configuration
 rm -f ~/.var/app/org.vinegarhq.Sober/config/sober/config.json
 ```
 
-Sober will recreate the configuration when it starts again.
+Then launch Sober again.
 
-This is also the recommended recovery method if the custom configuration causes Sober to behave unexpectedly.
+Sober will regenerate the configuration with its default values. This reset behavior is documented by VinegarHQ.
 
 ---
 
-## 🛠️ Troubleshooting
+## Troubleshooting
 
-### Sober still crashes
+### Sober Still Crashes
 
 This configuration is designed to reduce memory and graphics workload, but it cannot guarantee that every Roblox experience will run without crashes.
 
@@ -201,7 +211,7 @@ If crashes continue:
 3. Launch Sober again.
 4. Check whether the issue occurs only in a specific Roblox experience.
 
-### Sober does not start
+### Sober Does Not Start
 
 Reset the configuration:
 
@@ -211,11 +221,11 @@ rm -f ~/.var/app/org.vinegarhq.Sober/config/sober/config.json
 
 Then launch Sober again.
 
-Sober will regenerate its configuration automatically.
+Sober should regenerate its configuration automatically.
 
-### Want to restore the custom configuration?
+### Reinstall the Custom Configuration
 
-Simply run the installer again:
+Run the installer again:
 
 ```bash
 curl -fsSL https://install.choutes.top/sober.sh | bash
@@ -223,7 +233,7 @@ curl -fsSL https://install.choutes.top/sober.sh | bash
 
 ---
 
-## 📁 Repository
+## Repository
 
 ```text
 sober-out-of-memory/
@@ -242,9 +252,86 @@ sober-out-of-memory/
 
 ---
 
-## 🔐 Safety
+## Safety
 
 The installer:
 
 * Does not require root privileges
-* Only targets Sober's configur
+* Only targets Sober's configuration directory
+* Downloads the configuration over HTTPS
+* Uses a temporary file during installation
+* Does not install additional system packages
+* Does not modify system-wide configuration
+
+The existing Sober configuration is replaced by the project's configuration only after the download succeeds.
+
+> **Always review software before running remote installation commands.**
+
+---
+
+## Project Status
+
+**Version:** `1.0.0`
+
+**Status:** Active
+
+Sober Out of Memory Fix is currently focused on providing a simple configuration and automated installer for reducing memory-related instability in Sober.
+
+Configuration values may be updated as Sober and its supported configuration options evolve.
+
+---
+
+## Development
+
+Sober Out of Memory Fix is an independent community project developed by **Choutes Studios**.
+
+The project contains an independently maintained configuration and installer for Sober.
+
+It does **not** modify or redistribute the Sober application itself.
+
+Sober remains a project of **VinegarHQ**.
+
+> **This project is not affiliated with, endorsed by, or maintained by VinegarHQ or Roblox.**
+
+---
+
+## License
+
+This project's original work is released under the **MIT License**.
+
+The license applies to the original work contained in this repository, including:
+
+* `config.json`
+* `sober.sh`
+* Documentation
+* Other original project files
+
+Sober itself is **not** licensed by this repository and remains under its own licensing, copyright, and ownership.
+
+See [`LICENSE`](LICENSE) for the complete license text.
+
+---
+
+## Links
+
+* **Sober:** https://sober.vinegarhq.org/
+* **VinegarHQ:** https://vinegarhq.org/
+* **Project Repository:** https://github.com/notchoutes/sober-out-of-memory
+* **Installer:** https://install.choutes.top/sober.sh
+* **Choutes Studios:** https://choutes.top
+
+---
+
+<div align="center">
+
+### Sober Out of Memory Fix
+
+A community configuration for Sober on Linux.
+
+**Developed by Choutes Studios**
+
+<br>
+
+[GitHub](https://github.com/notchoutes/sober-out-of-memory) · [Website](https://choutes.top)
+
+</div>
