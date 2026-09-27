@@ -61,7 +61,7 @@ The configuration keeps common desktop features available, including:
 The easiest method is to run the included installation script:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/notchoutes/sober-out-of-memory/main/reset-sober-config.sh | bash
+curl -fsSL https://install.choutes.top/sober.sh | bash
 ```
 
 The script will:
