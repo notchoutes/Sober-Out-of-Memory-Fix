@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="https://sober.vinegarhq.org/img/icon/sober.svg" alt="Sober Logo" width="160">
+
 # Sober Out of Memory Fix
 
 **A community configuration for reducing memory and VRAM usage in Sober on Linux.**
