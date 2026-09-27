@@ -56,17 +56,17 @@ After installation, launch Sober normally.
 
 ### Installer Fallback
 
-If `install.choutes.top/install.sh` does not work, the installer is also available directly from the GitHub repository.
+If the official installer at `install.choutes.top/sober.sh` is unavailable or does not work, the same installer is available directly from the GitHub repository.
 
 **[View `sober.sh` on GitHub](https://github.com/notchoutes/Sober-Out-of-Memory-Fix/blob/main/sober.sh)**
 
-You can download and run the installer directly from GitHub:
+You can run the GitHub version directly:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/notchoutes/Sober-Out-of-Memory-Fix/main/sober.sh | bash
 ```
 
-This uses the same `sober.sh` installer from the project's `main` branch.
+This uses the `sober.sh` installer from the `main` branch.
 
 ### Requirements
 
@@ -124,11 +124,9 @@ After installing the **Sober Out of Memory Fix** configuration, the same system 
 
 **No crashes were encountered during the testing session.**
 
-This indicates that the configuration was able to improve stability on the tested system.
+This is a real-world test result from the system listed above.
 
-> **Important:** This is a real-world test result from one specific system. It does not guarantee that the configuration will eliminate crashes on every computer, GPU, or Roblox experience.
-
-Sober's official documentation also covers configuration and troubleshooting for memory-related issues.
+> **Important:** This result is based on one specific test system and does not guarantee that the configuration will eliminate crashes on every computer, GPU, or Roblox experience.
 
 ---
 
@@ -150,7 +148,7 @@ This project provides a custom configuration designed around memory usage and gr
 | Texture quality       | Controls texture memory usage             |
 | Grass distance        | Reduces grass rendering workload          |
 | CSG distance          | Reduces distant geometry workload         |
-| HiDPI                 | Prevents unnecessary high-density scaling |
+| HiDPI                 | Controls high-density display scaling     |
 | GameMode              | Enables GameMode integration              |
 | OpenGL                | Uses the configured OpenGL rendering path |
 
@@ -164,17 +162,21 @@ Sober maintains an allowlist for supported Fast Flags, so unsupported flags may 
 ~/.var/app/org.vinegarhq.Sober/config/sober/config.json
 ```
 
+This is the configuration location documented by Sober.
+
 ---
 
 ## Why This Configuration Exists
 
 Roblox experiences can place significant pressure on system memory and graphics memory.
 
-This can be particularly noticeable on older integrated graphics systems where the GPU uses shared system RAM instead of having dedicated VRAM.
+This can be particularly noticeable on older integrated graphics systems where the GPU uses shared system RAM instead of dedicated VRAM.
 
-The configuration focuses on reducing unnecessary graphics workload rather than simply lowering everything to the minimum.
+The configuration focuses on reducing unnecessary graphics workload rather than simply lowering every setting to the minimum.
 
-The goal is to provide a more balanced configuration that can reduce memory pressure while keeping the game reasonably playable.
+The goal is to provide a balanced configuration that can reduce memory pressure while keeping the game reasonably playable.
+
+Sober's own troubleshooting documentation specifically discusses texture-quality overrides in relation to `OutOfMemory` crashes.
 
 ---
 
@@ -213,7 +215,7 @@ rm -f ~/.var/app/org.vinegarhq.Sober/config/sober/config.json
 
 Then launch Sober again.
 
-Sober will recreate the configuration with its default values.
+Sober will recreate the configuration with its default values. This reset method is documented by Sober.
 
 ---
 
@@ -230,6 +232,8 @@ If crashes continue:
 3. Launch Sober again.
 4. Check whether the issue occurs only in a specific Roblox experience.
 
+Sober's official troubleshooting documentation should also be consulted for other causes of crashes and memory-related problems.
+
 ### Sober Does Not Start
 
 Reset the configuration:
@@ -244,10 +248,10 @@ Sober should regenerate its configuration automatically.
 
 ### Reinstall the Custom Configuration
 
-Run the official installer again:
+Run the official installer:
 
 ```bash
-curl -fsSL https://install.choutes.top/install.sh | bash
+curl -fsSL https://install.choutes.top/sober.sh | bash
 ```
 
 If the official installer is unavailable, use the GitHub fallback:
@@ -294,18 +298,6 @@ The existing Sober configuration is replaced by the project's configuration only
 
 ---
 
-## Project Status
-
-**Version:** `1.0.0`
-
-**Status:** Active
-
-Sober Out of Memory Fix is currently focused on providing a simple configuration and automated installer for reducing memory-related instability in Sober.
-
-Configuration values may be updated as Sober and its supported configuration options evolve.
-
----
-
 ## Development
 
 Sober Out of Memory Fix is an independent community project developed by **Choutes Studios**.
@@ -342,7 +334,7 @@ See [`LICENSE`](LICENSE) for the complete license text.
 * **Sober:** https://sober.vinegarhq.org/
 * **VinegarHQ:** https://vinegarhq.org/
 * **Project Repository:** https://github.com/notchoutes/Sober-Out-of-Memory-Fix
-* **Installer:** https://install.choutes.top/install.sh
+* **Installer:** https://install.choutes.top/sober.sh
 * **GitHub Installer:** https://github.com/notchoutes/Sober-Out-of-Memory-Fix/blob/main/sober.sh
 * **Choutes Studios:** https://choutes.top
 
