@@ -1,9 +1,25 @@
 // !!! STOP !!!
-// This file is not meant to be edited by hand unless you know what you're doing. You are encouraged to use the settings menu instead (Right click Sober in your apps menu, then hit "Settings")
-// You can prevent Sober from launching by improperly formatting this file's JSON, or possibly mess up the Roblox engine by toggling certain flags intended for Roblox engineers.
-// Incase you mess up, you can reset this file by deleting it. It will be recreated the next time you launch Sober.
+// This file is not meant to be edited by hand unless you know what you're doing.
+//
+// This configuration has been modified by Choutes Studios for the
+// Sober Out of Memory Fix project.
+//
+// Sober configuration and documentation:
+// https://vinegarhq.org/Sober/Configuration/index.html
+//
+// You are encouraged to use the Sober settings menu when possible.
+// Improperly formatting this file may prevent Sober from launching or
+// cause unexpected behavior.
+//
+// If something goes wrong, delete this file. Sober will recreate it
+// the next time it is launched.
+//
 // -------------------------------------------
-// Documentation is available at https://vinegarhq.org/Sober/Configuration/index.html - We encourage you to read it before toggling anything.
+// Sober Out of Memory Fix
+// Modified by Choutes Studios
+// Version: 1.0.0
+// -------------------------------------------
+
 {
     "allow_gamepad_permission": false,
     "close_on_leave": false,
