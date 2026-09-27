@@ -40,7 +40,7 @@ The easiest way to install the configuration is through the official installer.
 Run:
 
 ```bash
-curl -fsSL https://install.choutes.top/install.sh | bash
+curl -fsSL https://install.choutes.top/sober.sh | bash
 ```
 
 The installer will:
