@@ -1,168 +1,64 @@
+<div align="center">
+
 # Sober Out of Memory Fix
 
-> A lightweight Sober configuration focused on reducing memory and VRAM pressure during longer Roblox sessions on Linux.
+### A lightweight configuration for reducing memory pressure in Sober on Linux.
 
-[![Sober](https://img.shields.io/badge/Sober-Linux-blue?style=flat-square)](https://vinegarhq.org/)
-[![Platform](https://img.shields.io/badge/Platform-Linux-informational?style=flat-square)](https://vinegarhq.org/)
-[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
+[![Platform](https://img.shields.io/badge/Platform-Linux-111827?style=for-the-badge\&logo=linux\&logoColor=white)](https://www.linux.org/)
+[![Sober](https://img.shields.io/badge/Sober-VinegarHQ-111827?style=for-the-badge)](https://sober.vinegarhq.org/)
+[![Shell](https://img.shields.io/badge/Installer-Bash-111827?style=for-the-badge\&logo=gnubash\&logoColor=white)](https://www.gnu.org/software/bash/)
 
----
+<br>
 
-## Overview
+**Reduce memory pressure. Keep playing.**
 
-**Sober Out of Memory Fix** is a preconfigured `config.json` for [Sober](https://vinegarhq.org/), the Linux Roblox client developed by VinegarHQ.
+[Quick Install](#-quick-install) · [How It Works](#-how-it-works) · [Configuration](#-configuration) · [Troubleshooting](#-troubleshooting)
 
-The configuration is designed to **reduce graphics-related memory and VRAM usage** by lowering selected texture, grass, geometry, and rendering quality settings.
-
-It is intended primarily for systems that experience:
-
-* Out-of-memory crashes
-* VRAM-related crashes
-* Increasing memory usage during long play sessions
-* Instability when running graphics-heavy Roblox experiences
-* Excessive texture or level-of-detail usage
-
-> **This configuration prioritizes stability over maximum visual quality.**
-
-It does not guarantee that every Roblox experience will run without crashes, since memory usage can vary significantly between experiences, GPUs, drivers, and Sober versions.
+</div>
 
 ---
 
-## ✨ What This Configuration Changes
+## ✨ Overview
 
-### Graphics
+**Sober Out of Memory Fix** is a community-made configuration for [Sober](https://sober.vinegarhq.org/) that focuses on reducing graphics-related memory usage.
 
-| Setting                       | Value      | Purpose                                                    |
-| ----------------------------- | ---------- | ---------------------------------------------------------- |
-| `graphics_optimization_mode`  | `balanced` | Maintains a balance between performance and visual quality |
-| `enable_hidpi`                | `false`    | Avoids unnecessary HiDPI scaling overhead                  |
-| `DFIntTextureQualityOverride` | Configured | Reduces texture memory requirements                        |
-| `FIntFRMMaxGrassDistance`     | Configured | Limits the maximum grass rendering distance                |
-| CSG / geometry FFlags         | Configured | Reduces distant geometry detail where applicable           |
+It is designed for Linux users who experience issues such as:
 
-Additional configuration values are kept close to sensible desktop defaults rather than aggressively disabling unrelated Sober functionality.
+* `OutOfMemory` crashes
+* High VRAM usage
+* Instability during longer sessions
+* Problems in graphics-heavy Roblox experiences
 
-### Desktop Features
+The project provides a ready-to-use configuration together with a simple installer.
 
-The configuration keeps common desktop features available, including:
-
-* Discord integration settings
-* GameMode support
-* Standard desktop UI behavior
-* Normal controller support
-* Default rendering behavior unless explicitly changed by the configuration
+> **This project is independent from Sober, VinegarHQ, and Roblox.**
 
 ---
 
-## 📦 Installation
+## 🚀 Quick Install
 
-### Automatic Installation
-
-The easiest method is to run the included installation script:
+Open a terminal and run:
 
 ```bash
 curl -fsSL https://install.choutes.top/sober.sh | bash
 ```
 
-The script will:
+That's it.
 
-1. Remove the existing Sober configuration.
-2. Download the optimized `config.json`.
-3. Place it in Sober's configuration directory.
+The installer automatically:
 
-The configuration will be used automatically the next time Sober starts.
+1. Checks the environment
+2. Creates the required configuration directory
+3. Downloads the configuration
+4. Validates the JSON
+5. Installs the configuration
+6. Verifies the result
 
----
-
-### Manual Installation
-
-If you prefer to install the configuration yourself:
-
-```bash
-rm -f ~/.var/app/org.vinegarhq.Sober/config/sober/config.json
-```
-
-Then download the configuration:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/notchoutes/sober-out-of-memory/main/config.json \
-  -o ~/.var/app/org.vinegarhq.Sober/config/sober/config.json
-```
-
-Launch Sober normally after the download completes.
+No system-wide files are modified.
 
 ---
 
-## 🔄 Reset to Default
-
-If you experience problems after applying the configuration, simply remove the custom configuration:
-
-```bash
-rm -f ~/.var/app/org.vinegarhq.Sober/config/sober/config.json
-```
-
-Sober will regenerate its default configuration the next time it starts.
-
-This is also the recommended recovery method if Sober fails to launch because of a malformed configuration file.
-
----
-
-## ⚠️ Important Notes
-
-### This Is Not an FPS Optimization Config
-
-This project is specifically focused on **reducing memory and VRAM pressure**.
-
-It is **not** designed to maximize FPS or graphical quality.
-
-Depending on your hardware and the Roblox experience being played, you may notice:
-
-* Lower texture quality
-* Reduced grass distance
-* Reduced distant geometry detail
-* Less graphical fidelity
-
-That is intentional.
-
----
-
-### FFlags Are Not Guaranteed
-
-Sober's FFlag system is subject to changes by Roblox and Sober.
-
-Since September 2025, Roblox Fast Flags have been restricted through a whitelist system. FFlags that are not permitted may simply be ignored even when they are correctly configured.
-
-Because of this, the exact behavior of this configuration may change as Sober and Roblox are updated.
-
----
-
-### Do Not Edit the JSON Unless You Know What You Are Doing
-
-Sober's official documentation warns that incorrectly formatted JSON can prevent Sober from launching.
-
-If you manually modify the configuration, make sure the JSON remains valid.
-
-When in doubt, reset the configuration using:
-
-```bash
-rm -f ~/.var/app/org.vinegarhq.Sober/config/sober/config.json
-```
-
-Sober will recreate it automatically.
-
----
-
-## 🧠 Why Lower Texture Quality Helps
-
-Graphics-heavy Roblox experiences can place significant pressure on available VRAM.
-
-Sober's own troubleshooting documentation recommends lowering the texture quality override when dealing with certain out-of-memory crashes. The official troubleshooting guide specifically documents `DFIntTextureQualityOverride` together with `DFFlagTextureQualityOverrideEnabled` as a workaround, while noting that this does not guarantee every experience will be playable.
-
-This project builds on that general approach by combining texture, grass, geometry, and graphics-related settings into a single reusable configuration.
-
----
-
-## 🖥️ Configuration Location
+## 🧩 How It Works
 
 Sober stores its configuration at:
 
@@ -170,21 +66,76 @@ Sober stores its configuration at:
 ~/.var/app/org.vinegarhq.Sober/config/sober/config.json
 ```
 
-You can also access Sober's configuration interface through:
+This project provides a preconfigured version of that file with graphics-related settings intended to reduce memory usage.
 
-```bash
-flatpak run org.vinegarhq.Sober config
+Sober's documentation confirms this as its configuration location and notes that deleting the file allows Sober to regenerate its defaults.
+
+### Configuration focus
+
+| Area            | Purpose                           |
+| --------------- | --------------------------------- |
+| Texture quality | Reduce texture memory usage       |
+| Grass distance  | Reduce rendering workload         |
+| CSG / geometry  | Reduce distant geometry detail    |
+| Graphics mode   | Balance quality and performance   |
+| HiDPI           | Keep unnecessary scaling disabled |
+
+---
+
+## 📦 What's Included
+
+```text
+sober-out-of-memory/
+│
+├── config.json     # Sober configuration
+├── sober.sh        # Automatic installer
+├── README.md       # Documentation
+└── LICENSE
 ```
 
-Sober's official documentation recommends using its settings interface when possible.
+The installer itself does not require `sudo` and does not modify system configuration.
+
+---
+
+## ⚙️ Configuration
+
+The default configuration uses:
+
+```json
+"graphics_optimization_mode": "balanced"
+```
+
+Sober provides `quality`, `balanced`, and `performance` graphics optimization modes, with `balanced` being its default mode.
+
+The configuration also contains selected graphics-related FFlags.
+
+Sober currently restricts which FFlags are accepted through an allowlist, so unsupported flags may simply be ignored.
+
+---
+
+## 🔄 Reset
+
+If you want to return to Sober's default configuration:
+
+```bash
+rm -f ~/.var/app/org.vinegarhq.Sober/config/sober/config.json
+```
+
+Start Sober again and it will recreate the configuration.
 
 ---
 
 ## 🛠️ Troubleshooting
 
-### Sober Does Not Start
+### Sober still crashes with `OutOfMemory`
 
-Reset the configuration:
+This configuration cannot guarantee that every game will run without memory-related crashes.
+
+Sober's own troubleshooting documentation identifies texture usage as one cause of `OutOfMemory` errors and recommends lowering the texture quality override when necessary.
+
+### Sober does not start
+
+Try resetting the configuration:
 
 ```bash
 rm -f ~/.var/app/org.vinegarhq.Sober/config/sober/config.json
@@ -192,107 +143,51 @@ rm -f ~/.var/app/org.vinegarhq.Sober/config/sober/config.json
 
 Then launch Sober again.
 
----
-
-### Roblox Still Crashes
-
-This configuration cannot eliminate every possible cause of an out-of-memory crash.
-
-Possible factors include:
-
-* GPU VRAM capacity
-* System RAM
-* Graphics driver behavior
-* Mesa version
-* The Roblox experience itself
-* Sober version
-* Current Roblox engine changes
-
-If the problem continues, try reducing the Roblox graphics quality further.
-
----
-
-### Graphics Look Too Low Quality
-
-This configuration intentionally trades some visual fidelity for lower memory usage.
-
-If your system has sufficient VRAM and you are no longer experiencing crashes, you can remove the custom configuration and return to Sober's defaults:
-
-```bash
-rm -f ~/.var/app/org.vinegarhq.Sober/config/sober/config.json
-```
-
----
-
-## 📁 Repository Structure
+If you need to investigate further, Sober stores logs in:
 
 ```text
-.
-├── config.json
-├── reset-sober-config.sh
-├── README.md
-└── LICENSE
+~/.var/app/org.vinegarhq.Sober/data/sober/sober_logs/
 ```
-
-### `config.json`
-
-The optimized Sober configuration.
-
-### `reset-sober-config.sh`
-
-A small helper script that removes the existing configuration and downloads the latest version from this repository.
 
 ---
 
 ## 🔐 Safety & Transparency
 
-This project does **not** modify Sober itself.
+The installer:
 
-It only replaces the user's Sober configuration file with the configuration provided in this repository.
+* Uses HTTPS
+* Downloads only the project configuration
+* Validates the downloaded JSON when Python 3 is available
+* Uses a temporary file before replacing the configuration
+* Does not require root access
+* Does not install additional software
 
-No additional software is installed by the configuration.
-
-The installation command downloads files directly from this repository's `main` branch, so review the script and configuration yourself if you prefer to verify changes before executing them.
-
----
-
-## 📚 References
-
-* [Sober](https://vinegarhq.org/)
-* [Sober Configuration Documentation](https://vinegarhq.org/Sober/Configuration/index.html)
-* [Sober Tips & Tricks](https://vinegarhq.org/Sober/Configuration/TipsAndTricks.html)
-* [Sober Troubleshooting](https://vinegarhq.org/Sober/Troubleshooting.html)
+You can inspect the installer and configuration directly in the repository before running them.
 
 ---
 
-## ⭐ Contributing
+## 🔗 Links
 
-Found a configuration issue, compatibility problem, or improvement?
-
-Feel free to open an issue or submit a pull request.
-
-When reporting a problem, please include:
-
-* Sober version
-* Linux distribution
-* GPU model
-* GPU driver / Mesa version
-* Amount of system RAM
-* Roblox experience where the issue occurred
-* Relevant Sober logs
-
-This makes it much easier to reproduce and investigate the problem.
+| Resource                | Link                                                                                           |
+| ----------------------- | ---------------------------------------------------------------------------------------------- |
+| Sober                   | [sober.vinegarhq.org](https://sober.vinegarhq.org/)                                            |
+| VinegarHQ Documentation | [vinegarhq.org](https://vinegarhq.org/)                                                        |
+| Project Repository      | [github.com/notchoutes/sober-out-of-memory](https://github.com/notchoutes/sober-out-of-memory) |
+| Installer               | [install.choutes.top/sober.sh](https://install.choutes.top/sober.sh)                           |
+| Choutes Studios         | [choutes.top](https://choutes.top)                                                             |
 
 ---
 
-## 📄 License
+<div align="center">
 
-This project is provided under the **MIT License**.
+### Sober Out of Memory Fix
 
-See [`LICENSE`](./LICENSE) for the full license text.
+A small configuration project for Sober on Linux.
 
----
+<br>
 
-<p align="center">
-  Made for a smoother and more stable Sober experience on Linux.
-</p>
+**Created by Choutes Studios**
+
+[Website](https://choutes.top) · [GitHub](https://github.com/notchoutes/sober-out-of-memory)
+
+</div>
